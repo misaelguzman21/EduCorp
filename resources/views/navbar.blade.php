@@ -15,7 +15,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class=" container-fluid">
             <a class="navbar-brand" href="/">EventCorp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -68,3 +68,11 @@
 </body>
 
 </html>
+
+<style>
+.navbar{
+    background-color: #afbabc;
+    border-color: #c58c8c;
+}
+
+</style>

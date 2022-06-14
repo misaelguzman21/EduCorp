@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+const PARTICIPANTS = [
+    ["id"=>1, "id_evento"=>2, "nombre" =>"Misael", "apellido_p"=> "Guzman", 
+    "apellido_m"=>"Gutierrez", "empresa"=>"Dow", "edad"=>22,"estado"=>"Gto",
+    "email"=>"misa@gmail.com", "telefono"=> 4451054390 ],
+    ["id"=>2, "id_evento"=>2, "nombre" =>"Nick", "apellido_p"=> "Garcias", 
+    "apellido_m"=>"Gutierrez", "empresa"=>"Tec", "edad"=>23,"estado"=>"Gto",
+    "email"=>"patrick@gmail.com", "telefono"=> 4451105238 ],
+];
+
 Route::get('/', function () {
-    return view('vistaeventos');
+    return view('index');
 });
 Route::get('/crearevento', function () {
     return view('crearevento');
@@ -22,3 +32,49 @@ Route::get('/crearevento', function () {
 Route::get('/crearparticipante', function () {
     return view('crearparticipante');
 });
+
+//Listado de eventos
+
+//Editar de eventos
+
+//Eliminar eventos
+
+//Prefijo de participantes
+Route::prefix('participants')->group(function(){
+    //Listado de participantes
+    Route::get("/", function(){
+        //Consulta para obtener los participantes
+        return view("participants.index", [
+            "participants" => PARTICIPANTS
+        ]);
+    });
+
+    //Editar de particioantes
+    Route::get("/edit/{id}", function($id){
+        $participant = null;
+
+        foreach(PARTICIPANTS as $p){
+            if ($p["id"] === intval($id)){
+                $participant = $p;
+            }
+
+        }
+
+        if(!empty($participant)){
+            return view("participants.edit", ["participant" => $participant]);
+        }else{
+            return view("error", ["message"=> "No se encontró el participante XD"]);
+        }
+    })->whereNumber("id");
+
+
+    //Procesar la edición
+    Route::post("/edit/{id}", function(Request $request, $id){
+        dump($id);
+        dd($request->all());
+
+    });
+
+});
+
+//Eliminar de particioantes
