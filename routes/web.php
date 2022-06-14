@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/crearevento', function () {
     return view('crearevento');
 });
+Route::get('/crearparticipante', function () {
+    return view('crearparticipante');
+});

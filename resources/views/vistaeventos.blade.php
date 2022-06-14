@@ -98,7 +98,7 @@
         </div>
     </div>
     <div class="d-grid gap-3" class>
-        <button class="btn btn-primary" type="button" href="/crearevento">Button</button>
+        <button class="btn btn-primary" type="button" href="./crearevento.php">Button</button>
     </div>
 
 
