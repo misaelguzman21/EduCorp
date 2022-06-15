@@ -8,7 +8,7 @@
         <h1 class="text-center p-4" >Editar Participante</h1>
 
         <form 
-            action="{{ url("participants/edit", ["id" => $participant["id"]])}}" 
+            action="{{ route("participants.update", ["participant" => $participant["id"]])}}" 
             method="post" 
             id="newParticipantForm" 
             class="mx-auto mt-sm-5"
@@ -17,7 +17,7 @@
             @csrf
 
             {{-- Esto sobreescribe el método del formulario --}}
-    {{--         @method('PUT') --}}
+            @method('PUT')
 
             <div class="form-group mb-3">
                 <label for="nombre">Nombre</label>
