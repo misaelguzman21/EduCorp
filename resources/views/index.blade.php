@@ -89,6 +89,11 @@
                         {{ $evento->localizacion}}
                         
                     </td>
+                    <td>
+
+                        <a href="{{route('evento.edit',$evento)}}">Editar</a>
+                        <a href="{{route('evento.show',$evento)}}">Ver</a>
+                    </td>
                 </tr>
             </tbody>
             @endforeach

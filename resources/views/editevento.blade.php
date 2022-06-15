@@ -8,9 +8,10 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3 class="text-center p-4">Editar Evento</h3>
-                        <form class="requires-validation" action="{{route('evento.store')}}" method="POST"  novalidate >
-                            <x-evento-form-body/>
+                        <h3 class="text-center p-4">Editar Evento <i>{{$evento->nombre}}</i> </h3>
+                        <form class="requires-validation" action="{{route('evento.update', $evento)}}" method="POST"  novalidate >
+                            @method('put')
+                            <x-evento-form-body :evento="$evento"/>
                         </form>
                         @if ($errors->any())
     <div class="alert alert-danger">
