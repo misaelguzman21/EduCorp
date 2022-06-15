@@ -34,7 +34,10 @@ Route::get('/', function () {
 Route::get('/crearevento',[RegistrarEventoController::class,'create'] )->name('evento.create'); //function () {
 Route::post('/guardarevento',[RegistrarEventoController::class,'store'])->name('evento.store');
 Route::get('/listar',[RegistrarEventoController::class,'index'] )->name('evento.index');
-Route::get('/editarevento',[RegistrarEventoController::class,'edit'] )->name('evento.edit');
+Route::get('{evento}/editarevento',[RegistrarEventoController::class,'edit'] )->name('evento.edit');
+Route::put('{evento}/actualizar', [RegistrarEventoController::class,'update'] )->name('evento.update');
+Route::get('{evento}/ver',[RegistrarEventoController::class,'show'] )->name('evento.show');
+Route::delete('{evento}/eliminar',[RegistrarEventoController::class,'destroy'] )->name('evento.destroy');
     //return view('crearevento');
 
 

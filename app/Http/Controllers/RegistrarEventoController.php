@@ -60,7 +60,7 @@ class RegistrarEventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        
+        return view('showevento',['evento' => $evento]);
     }
 
     /**
@@ -71,7 +71,7 @@ class RegistrarEventoController extends Controller
      */
     public function edit(Evento $evento)
     {
-        //
+        return view('editevento',compact('evento'));
     }
 
     /**
@@ -83,7 +83,22 @@ class RegistrarEventoController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
-        //
+        $datos = $request->validate(
+            [
+            'nombre' => 'required',
+            'siglas' => 'required',
+            'descripcion' => 'required',
+            'areas' => 'required',
+            'capacidad' => 'required|numeric',
+            'duracion' => 'required|numeric',
+            'costo' => 'required|numeric',
+            'localizacion' => 'required|',
+
+            ]);
+            
+            $evento->update($datos);
+            return redirect()->route('evento.index');
+        
     }
 
     /**
@@ -94,6 +109,7 @@ class RegistrarEventoController extends Controller
      */
     public function destroy(Evento $evento)
     {
-        //
+        $evento->delete();
+        return redirect()->route('evento.index');
     }
 }
