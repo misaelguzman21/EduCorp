@@ -10,29 +10,30 @@
                 <div class="form-content">
                     <div class="form-items">
                         <h3>Crear Evento</h3>
-                        <form class="requires-validation" novalidate>
+                        <form class="requires-validation" action="{{route('evento.store')}}" method="POST"  novalidate >
+                            @csrf
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="name" placeholder="Nombre" required>
+                                <input class="form-control" type="text" name="nombre" id="InputNombre" value="{{ old('nombreevento')}}" placeholder="Nombre" required>
                                 <div class="valid-feedback">Nombre de Evento</div>
                                 <div class="invalid-feedback">Ingrese un Nombre</div>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="siglas" placeholder="Siglas del evento"
+                                <input class="form-control" type="text" name="siglas" value="{{ old('siglas')}}" placeholder="Siglas del evento"
                                     required>
                                 <div class="valid-feedback">Siglas del Evento</div>
                                 <div class="invalid-feedback">Ingrese las siglas</div>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="descripcion" placeholder="Descripcion"
+                                <input class="form-control" type="text" name="descripcion" value="{{ old('descripcion')}}" placeholder="Descripcion"
                                     required>
                                 <div class="valid-feedback">Descripcion</div>
                                 <div class="invalid-feedback">Ingresa la Descripcion</div>
                             </div>
 
                             <div class="col-md-12">
-                                <select class="form-select mt-3" required>
+                                <select class="form-select mt-3" required name="areas" id="SelectArea" >
                                     <option selected disabled value="">Areas</option>
                                     <option value="jweb">Junior Web Developer</option>
                                     <option value="sweb">Senior Web Developer</option>
@@ -40,26 +41,29 @@
                                 </select>
                                 <div class="valid-feedback">You selected a position!</div>
                                 <div class="invalid-feedback">Please select a position!</div>
+                                <script>
+                                    document.getElementById('SelectArea').value = "old('area')";
+                                </script>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="number" name="capacidad" placeholder="Capacidad"
+                                <input class="form-control" type="number" name="capacidad" value="{{ old('capacidad')}}" placeholder="Capacidad"
                                     required>
                                 <div class="valid-feedback">Capacidad</div>
                                 <div class="invalid-feedback">Ingresa la capacidad</div>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="number" name="duracion" placeholder="Duracion"
+                                <input class="form-control" type="number" name="duracion" value="{{ old('duracion')}}" placeholder="Duracion"
                                     required>
                                 <div class="valid-feedback">Duracion</div>
                                 <div class="invalid-feedback">Ingresa el consto</div>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="number" name="costo" placeholder="Costo" required>
+                                <input class="form-control" type="number" name="costo" value="{{ old('costo')}}" placeholder="Costo" required>
                                 <div class="valid-feedback">Costo</div>
                                 <div class="invalid-feedback">Ingresa el consto</div>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="localizacion" placeholder="Locaclizacion"
+                                <input class="form-control" type="text" name="localizacion" value="{{ old('localizacion')}}" placeholder="Locaclizacion"
                                     required>
                                 <div class="valid-feedback">Localizacion</div>
                                 <div class="invalid-feedback">Ingresa la Localizacion</div>
@@ -67,18 +71,19 @@
 
 
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                <label class="form-check-label">Confirma que todos los datos son correctos</label>
-                                <div class="invalid-feedback">Porfavor confirma que todos los datos son correctos!
-                                </div>
-                            </div>
-
-
                             <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                <button id="submit" type="submit" class="btn btn-primary">Guardar</button>
                             </div>
                         </form>
+                        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                     </div>
                 </div>
             </div>

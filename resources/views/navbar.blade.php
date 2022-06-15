@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="{{route('evento.create')}}">CrearEvento</a>
                     <a class="nav-link" href="#">Pricing</a>
 
                     @auth

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\RegistrarEventoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,10 +27,19 @@ const PARTICIPANTS = [
 
 Route::get('/', function () {
     return view('index');
+
 });
-Route::get('/crearevento', function () {
-    return view('crearevento');
-});
+
+
+Route::get('/crearevento',[RegistrarEventoController::class,'create'] )->name('evento.create'); //function () {
+Route::post('/guardarevento',[RegistrarEventoController::class,'store'])->name('evento.store');
+Route::get('/listar',[RegistrarEventoController::class,'index'] )->name('evento.index');
+    //return view('crearevento');
+
+
+
+
+
 Route::get('/crearparticipante', function () {
     return view('crearparticipante');
 });
