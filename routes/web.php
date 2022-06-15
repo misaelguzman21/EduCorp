@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\RegistrarEventoController;
+use App\Http\Controllers\RegistrarParticipanteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,30 +54,10 @@ Route::get('/crearparticipante', function () {
 //Prefijo de participantes
 Route::prefix('participants')->group(function(){
     //Listado de participantes
-    Route::get("/", function(){
-        //Consulta para obtener los participantes
-        return view("participants.index", [
-            "participants" => PARTICIPANTS
-        ]);
-    });
+    Route::get("/", [RegistrarParticipanteController::class, 'index']);
 
     //Editar de particioantes
-    Route::get("/edit/{id}", function($id){
-        $participant = null;
-
-        foreach(PARTICIPANTS as $p){
-            if ($p["id"] === intval($id)){
-                $participant = $p;
-            }
-
-        }
-
-        if(!empty($participant)){
-            return view("participants.edit", ["participant" => $participant]);
-        }else{
-            return view("error", ["message"=> "No se encontró el participante XD"]);
-        }
-    })->whereNumber("id");
+    Route::get("/edit/{id}", [RegistrarParticipanteController::class, 'edit'])->whereNumber("id");
 
 
     //Procesar la edición
