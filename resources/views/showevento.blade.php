@@ -9,18 +9,8 @@
                         </h1>
 
                         <hr>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <form action="{{route('evento.destroy',$evento)}}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button class="btn btn-danger btn-sm" type="submit">
-                                    Borrar
-                                </button>
-                                </form>
-
-                            </div>
-                        </div>
+                        
+                        
     
                         
 
@@ -164,7 +154,34 @@
                         
                             <!-- /END THE FEATURETTES -->
                         
-                          </div><!-- /.container -->
+                          </div><!-- 
+                            /.container -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form action="{{route('evento.destroy',$evento)}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn btn-outline-danger" type="submit">
+                                        Borrar
+                                    </button>
+                                    
+                                    </form>
+    
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form action="" method="POST">
+                            
+                                    
+                                    <button class="btn btn-outline-warning" type="submit">
+                                        Agregar Invitado
+                                    </button>
+                                    </form>
+    
+                                </div>
+                            </div>
                         
                         
                           <!-- FOOTER -->

@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label for="localizacion">Localización de Evento</label>
-                                    <input class="form-control" type="text" name="localizacion" value="{{ old('localizacion',$evento->localizacion)}}" placeholder="Locaclizacion"
+                                    <input class="form-control" type="text" name="localizacion" value="{{ old('localizacion',$evento->localizacion)}}" placeholder="Localizacion"
                                         required>
                                     <div class="valid-feedback">Localizacion</div>
                                     <div class="invalid-feedback">Ingresa la Localizacion</div>
