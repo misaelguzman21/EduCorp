@@ -30,10 +30,10 @@ Route::get('/', function () {
 
 });
 
-
 Route::get('/crearevento',[RegistrarEventoController::class,'create'] )->name('evento.create'); //function () {
 Route::post('/guardarevento',[RegistrarEventoController::class,'store'])->name('evento.store');
 Route::get('/listar',[RegistrarEventoController::class,'index'] )->name('evento.index');
+Route::get('/editarevento',[RegistrarEventoController::class,'edit'] )->name('evento.edit');
     //return view('crearevento');
 
 
