@@ -1,9 +1,7 @@
-@extends('.navbar')
+@extends('layouts.main')
 
 @section('content')
-
-<body>
-
+<title>@yield('title', 'Inicio')</title>
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -101,11 +99,9 @@
         <button class="btn btn-primary" type="button" href="./crearevento.php">Button</button>
     </div>
 
-
-</body>
 <style>
 body {
-    background: #F4F7FD;
+    background: #152733;
     margin-top: 20px;
 }
 
