@@ -28,9 +28,11 @@
                                     <label for="areas">Área de capacitación</label>
                                     <select class="form-select mt-3" required name="areas" id="SelectArea" >
                                         <option selected disabled value="">Areas</option>
-                                        <option value="jweb">Junior Web Developer</option>
-                                        <option value="sweb">Senior Web Developer</option>
-                                        <option value="pmanager">Project Manager</option>
+                                        <option value="Contabilidad">Contabilidad</option>
+                                        <option value="Direccion">Direccion</option>
+                                        <option value="Produccion">Produccion</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Recursos humanos">Recursos humanos</option>
                                     </select>
                                     <div class="valid-feedback">You selected a position!</div>
                                     <div class="invalid-feedback">Please select a position!</div>
@@ -47,7 +49,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label for="duracion">Duración de Evento</label>
-                                    <input class="form-control" type="number" name="duracion" value="{{ old('duracion',$evento->duracion)}}" placeholder="Duracion"
+                                    <input class="form-control" type="number" name="duracion" value="{{ old('duracion',$evento->duracion)}}" placeholder="Duracion en Horas"
                                         required>
                                     <div class="valid-feedback">Duracion</div>
                                     <div class="invalid-feedback">Ingresa el consto</div>
