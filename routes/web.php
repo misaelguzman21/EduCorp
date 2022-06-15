@@ -17,14 +17,6 @@ use App\Http\Controllers\RegistrarParticipanteController;
 */
 
 
-const PARTICIPANTS = [
-    ["id"=>1, "id_evento"=>2, "nombre" =>"Misael", "apellido_p"=> "Guzman", 
-    "apellido_m"=>"Gutierrez", "empresa"=>"Dow", "edad"=>22,"estado"=>"Gto",
-    "email"=>"misa@gmail.com", "telefono"=> 4451054390 ],
-    ["id"=>2, "id_evento"=>2, "nombre" =>"Nick", "apellido_p"=> "Garcias", 
-    "apellido_m"=>"Gutierrez", "empresa"=>"Tec", "edad"=>23,"estado"=>"Gto",
-    "email"=>"patrick@gmail.com", "telefono"=> 4451105238 ],
-];
 
 Route::get('/', function () {
     return view('index');
@@ -54,21 +46,7 @@ Route::get('/crearparticipante', function () {
 
 //Eliminar eventos
 
+Route::resource('participants', RegistrarParticipanteController::class);
 //Prefijo de participantes
-Route::prefix('participants')->group(function(){
-    //Listado de participantes
-    Route::get("/", [RegistrarParticipanteController::class, 'index']);
-
-    //Editar de particioantes
-    Route::get("/edit/{id}", [RegistrarParticipanteController::class, 'edit'])->whereNumber("id");
-
-
-    //Procesar la edición
-    Route::post("/edit/{id}", function(Request $request, $id){
-
-
-    });
-
-});
 
 //Eliminar de particioantes

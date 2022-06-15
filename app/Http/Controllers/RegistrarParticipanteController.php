@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+//Importar el modelo de Participantes :3
+use App\Models\Participant;
 
 class RegistrarParticipanteController extends Controller
 {
-
+/* 
     private $participants = [
         ["id"=>1, "id_evento"=>2, "nombre" =>"Misael", "apellido_p"=> "Guzman", 
         "apellido_m"=>"Gutierrez", "empresa"=>"Dow", "edad"=>22,"estado"=>"Gto",
@@ -14,7 +18,7 @@ class RegistrarParticipanteController extends Controller
         ["id"=>2, "id_evento"=>2, "nombre" =>"Nick", "apellido_p"=> "Garcias", 
         "apellido_m"=>"Gutierrez", "empresa"=>"Tec", "edad"=>23,"estado"=>"Gto",
         "email"=>"patrick@gmail.com", "telefono"=> 4451105238 ],
-    ];
+    ]; */
 
     /**
      * Display a listing of the resource.
@@ -24,7 +28,8 @@ class RegistrarParticipanteController extends Controller
     public function index()
     {
         //
-        return view("participants.index", ["participants" => $this->participants]);
+        $participants = Participant::all();
+        return view("participants.index", ["participants" => $participants]);
     }
 
     /**

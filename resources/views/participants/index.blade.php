@@ -1,10 +1,10 @@
-{{-- @extends('layouts.main')
+ @extends('layouts.main')
 
-@section('pageTitle', "Autores")
+@section('title', "Participantes")
   
-@section('mainContent')
-     --}}
-    <h1 class="text-center mb-4">Autores</h1>
+@section('content')
+
+    <h1 class="text-center mb-4">Participantes</h1>
 
     <ul class="list-group w-50 mx-auto">
         
@@ -19,8 +19,10 @@
         @forelse($participants as $participant)
 
             <li class="list-group-item d-flex justify-content-between">
-                <p class="mb-0">{{ $participant->fullName() }}<p>
-                <span class="badge bg-info">{{ $participant->country->name }}</span>
+                {{ $participant->fullName()  }}
+
+{{--                 <p class="mb-0">{{ $participant->fullName() }}<p>
+                <span class="badge bg-info">{{ $participant->country->name }}</span> --}}
             </li>
 
         @empty
@@ -32,5 +34,26 @@
         @endforelse
 
     </ul>
+
+    <style>
+        body {
+            background: #152733;
+            margin-top: 20px;
+        }
+        
+        .btn-secondary {
+    
+            margin-bottom: 3%;
+        
+        }
+        
+        footer {
+        background-color: #afbabc;
+        padding: 30px;
+        text-align: center;
+        color: #F4F7FD
+        }
+    
+    </style>
 
 @endsection
