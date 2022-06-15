@@ -8,40 +8,34 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Crear Evento</h3>
+                        <h3 class="text-center p-4">Crear Evento</h3>
                         <form class="requires-validation" action="{{route('evento.store')}}" method="POST"  novalidate >
                             @csrf
 
                             <div class="col-md-12">
+                                <label for="nombre">Nombre de Evento</label>
                                 <input class="form-control" type="text" name="nombre" id="InputNombre" value="{{ old('nombreevento')}}" placeholder="Nombre" required>
                                 <div class="valid-feedback">Nombre de Evento</div>
                                 <div class="invalid-feedback">Ingrese un Nombre</div>
                             </div>
                             <div class="col-md-12">
-<<<<<<< HEAD
-                                <input class="form-control" type="text" name="siglas" value="{{ old('siglas')}}" placeholder="Siglas del evento"
-=======
                                 <label for="siglas">Siglas de Evento</label>
-                                <input class="form-control" type="text" name="siglas" placeholder="Siglas del evento"
->>>>>>> MisaRoutes
+                                <input class="form-control" type="text" name="siglas" value="{{ old('siglas')}}" placeholder="Siglas del evento"
                                     required>
                                 <div class="valid-feedback">Siglas del Evento</div>
                                 <div class="invalid-feedback">Ingrese las siglas</div>
                             </div>
 
                             <div class="col-md-12">
-<<<<<<< HEAD
-                                <input class="form-control" type="text" name="descripcion" value="{{ old('descripcion')}}" placeholder="Descripcion"
-=======
                                 <label for="descripcion">Descripción de Evento</label>
-                                <input class="form-control" type="text" name="descripcion" placeholder="Descripcion"
->>>>>>> MisaRoutes
+                                <input class="form-control" type="text" name="descripcion" value="{{ old('descripcion')}}" placeholder="Descripcion"
                                     required>
                                 <div class="valid-feedback">Descripcion</div>
                                 <div class="invalid-feedback">Ingresa la Descripcion</div>
                             </div>
 
                             <div class="col-md-12">
+                                <label for="areas">Área de capacitación</label>
                                 <select class="form-select mt-3" required name="areas" id="SelectArea" >
                                     <option selected disabled value="">Areas</option>
                                     <option value="jweb">Junior Web Developer</option>
@@ -55,23 +49,27 @@
                                 </script>
                             </div>
                             <div class="col-md-12">
+                                <label for="capacidad">Capacidad</label>
                                 <input class="form-control" type="number" name="capacidad" value="{{ old('capacidad')}}" placeholder="Capacidad"
                                     required>
                                 <div class="valid-feedback">Capacidad</div>
                                 <div class="invalid-feedback">Ingresa la capacidad</div>
                             </div>
                             <div class="col-md-12">
+                                <label for="duracion">Duración de Evento</label>
                                 <input class="form-control" type="number" name="duracion" value="{{ old('duracion')}}" placeholder="Duracion"
                                     required>
                                 <div class="valid-feedback">Duracion</div>
                                 <div class="invalid-feedback">Ingresa el consto</div>
                             </div>
                             <div class="col-md-12">
+                                <label for="costo">Costo de Evento</label>
                                 <input class="form-control" type="number" name="costo" value="{{ old('costo')}}" placeholder="Costo" required>
                                 <div class="valid-feedback">Costo</div>
                                 <div class="invalid-feedback">Ingresa el consto</div>
                             </div>
                             <div class="col-md-12">
+                                <label for="localizacion">Localización de Evento</label>
                                 <input class="form-control" type="text" name="localizacion" value="{{ old('localizacion')}}" placeholder="Locaclizacion"
                                     required>
                                 <div class="valid-feedback">Localizacion</div>
