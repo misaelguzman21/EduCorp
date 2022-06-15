@@ -94,6 +94,8 @@ class RegistrarParticipanteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        dump($id);
+        dd($request->all());
     }
 
     /**

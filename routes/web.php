@@ -62,8 +62,7 @@ Route::prefix('participants')->group(function(){
 
     //Procesar la edición
     Route::post("/edit/{id}", function(Request $request, $id){
-        dump($id);
-        dd($request->all());
+
 
     });
 
