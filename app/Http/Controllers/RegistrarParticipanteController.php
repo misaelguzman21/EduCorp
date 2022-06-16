@@ -59,9 +59,10 @@ class RegistrarParticipanteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Participant $participant)
     {
         //
+        return view('participants.detail', ["participant"=> $participant]);
     }
 
     /**

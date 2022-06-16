@@ -149,6 +149,36 @@
                         
                               </div>
                             </div>
+                            <hr class="featurette-divider">
+
+                            <div class="row featurette">
+                              <h2 class="featurette-heading">Participantes: </h2>
+                              <div class="text-center">
+                                <ul>
+                                  <li class="list-group-item">
+
+  {{--                                   @foreach($evento->participants as $participant) --}}
+                                    {{ $evento->participantsNames() }} 
+                                  </li>
+                                </ul>
+{{--                                   @endforeach --}}
+                              </div>
+                          </div>
+                          <hr class="featurette-divider">
+
+                            <div class="row featurette">
+                                <h2 class="featurette-heading">Categorías: </h2>
+                                <div class="text-center">
+                                  <br>
+                                    @foreach($evento->categories as $category)
+
+                                    <span> 
+                                      {{ $category ->nombre }} 
+                                    </span>
+
+                                    @endforeach
+                                </div>
+                            </div>
                         
                             <hr class="featurette-divider">
                         
@@ -176,7 +206,7 @@
                             
                                     
                                     <button class="btn btn-outline-warning" type="submit">
-                                        Agregar Invitado
+                                        Agregar participante
                                     </button>
                                     </form>
     
@@ -208,6 +238,11 @@
   color: #ffdede;
 }
 
+
+.list-group-item{
+  background: #152733;
+  color: white;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
