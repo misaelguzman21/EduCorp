@@ -19,7 +19,7 @@ class ParticipantSeeder extends Seeder
             ["id"=>1, "nombre"=>"Misael", "apellido"=>"Guzmán Gutiérrez", "edad"=>22, "estado"=>"Guanajuato", "email"=>"misaa@gmail.com", "telefono"=>445105],
             ["id"=>2, "nombre"=>"Rodolfo", "apellido"=>"Renteria", "edad"=>22, "estado"=>"Guanajuato", "email"=>"rodolfiux@gmail.com", "telefono"=>442100], 
             ["id"=>3, "nombre"=>"Pierina", "apellido"=>"Alba", "edad"=>23, "estado"=>"Guanajuato", "email"=>"hola@gmail.com", "telefono"=>444105],    
-            ["id"=>4, "nombre"=>"Zorriana", "apellido"=>"Alba", "edad"=>23, "estado"=>"Guanajuato", "email"=>"holaaa@gmail.com", "telefono"=>344105],            
+            ["id"=>4, "nombre"=>"Hola", "apellido"=>"Alba", "edad"=>23, "estado"=>"Guanajuato", "email"=>"holaaa@gmail.com", "telefono"=>344105],            
         ]);
     }
 }
