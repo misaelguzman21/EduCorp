@@ -18,6 +18,7 @@ class EventoParticipantSeeder extends Seeder
             ['evento_id'=>1, 'participant_id'=> 1 ],
             ['evento_id'=>1, 'participant_id'=> 2 ],
             ['evento_id'=>1, 'participant_id'=> 3 ],
+            ['evento_id'=>2, 'participant_id'=> 4 ],
         ]);
     }
 }

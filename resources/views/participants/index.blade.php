@@ -46,6 +46,12 @@
         @endforelse
 
     </ul>
+    <br>
+    <div class="text-center">
+        <a class="btn btn-success" type="submit" href="{{route('participants.create')}}">
+            Crear participante
+        </a>
+    </div>
 
     <style>
         body {

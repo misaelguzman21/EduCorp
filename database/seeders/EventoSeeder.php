@@ -17,7 +17,8 @@ class EventoSeeder extends Seeder
     {
         //
         DB::table('eventos')->insert([
-            ["id"=>1, "nombre"=>"Tec Event", "siglas"=>"FE", "descripcion"=>"Evento escolar","areas"=>"Marketing", "capacidad"=>400,  "duracion"=>3, "costo"=>100, "localizacion"=>"Tec"],               
+            ["id"=>1, "nombre"=>"Tec Event", "siglas"=>"FE", "descripcion"=>"Evento escolar","areas"=>"Marketing", "capacidad"=>400,  "duracion"=>3, "costo"=>100, "localizacion"=>"Tec"],
+            ["id"=>2, "nombre"=>"FORD", "siglas"=>"F", "descripcion"=>"Evento de autos","areas"=>"Marketing", "capacidad"=>400,  "duracion"=>8, "costo"=>200, "localizacion"=>"Querétaro"],               
         ]);
     }
 }
