@@ -59,11 +59,10 @@
 
     <style>
         
-body {
-    color: black var(--main-font-color);
-
-margin-top: 20px;
-}
+        body {
+        background: #152733;
+        margin-top: 20px;
+    }
 
 .btn-primary {
 margin-right: 25%;
