@@ -15,8 +15,28 @@ use App\Http\Controllers\RegistrarParticipanteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use GuzzleHttp\Client;
 
+Route::get('/webservice', function () {
+     $client = new Client([
+        // Base URI is used with relative requests
+        'base_uri' => 'https://jsonplaceholder.typicode.com',
+        // You can set any number of default request options.
+        'timeout'  => 2.0,
+        
+        //return view('webservice');
+        
+    ]);
+    $response = $client->request('GET', 'posts');
+        $posts = json_decode($response->getBody()->getContents());
 
+        return view('webservice', compact('posts'));
+    
+});
+    
+
+   
+   /* */
 
 Route::get('/', function () {
     return view('index');
