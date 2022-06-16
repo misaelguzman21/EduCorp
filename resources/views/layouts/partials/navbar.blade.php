@@ -10,19 +10,6 @@
                 <div class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <a class="nav-link" href="{{route('evento.create')}}">CrearEvento</a>
                     <a class="nav-link" href="{{route('participants.index')}}">Participantes</a>
-{{--                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{route('participants.index')}}" id="participantsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
-                            Participantes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="loginDropdown">
-                          <li>
-                            <a class="dropdown-item text-center text-md-start" href="{{route('participants.create')}}" id="participantsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
-                                Crear participante
-                            </a>
-                          </li>
-                        </ul>
-                    </li> --}}
-
                     @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
