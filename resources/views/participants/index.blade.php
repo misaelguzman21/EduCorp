@@ -20,7 +20,19 @@
 
             <li class="list-group-item d-flex justify-content-between">
                 {{ $participant->fullName()  }}
+                <span>
+                    <button class="btn btn-success" type="submit">
+                        Editar
+                    </button>
 
+                <form action ="{{route("participants.destroy", ["participant"=> $participant->id])}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">
+                        Borrar
+                    </button>
+                </form>
+                </span>
 {{--                 <p class="mb-0">{{ $participant->fullName() }}<p>
                 <span class="badge bg-info">{{ $participant->country->name }}</span> --}}
             </li>
@@ -52,6 +64,10 @@
         padding: 30px;
         text-align: center;
         color: #F4F7FD
+        }
+        .list-group-item{
+            background-color: #152733;
+            color: white;
         }
     
     </style>

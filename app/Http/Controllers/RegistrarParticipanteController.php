@@ -109,8 +109,12 @@ class RegistrarParticipanteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Participant $participant)
     {
         //
+        $participant->delete();
+
+        return redirect()->route('participants.index')
+        ->with('message', ["type"=>"success","text"=>"Borrado exitoso."]);
     }
 }

@@ -25,6 +25,10 @@ class Evento extends Model
        'localizacion',
    ];
 
+   public function participants(){
+    return $this-> belongsToMany(Participant::class, 'eventos_participants');
+   }
+
     //generar URL de la imagen
     /*public function coverPath(){
         return Storage::url('eventos_img/' . $this->imagen);
